@@ -1,15 +1,12 @@
-import { add } from 'gridaly-package';
+import { add, divide, subtract } from 'gridaly-package';
 
-const App = () => {
-	const x = add(3, 5);
-	return (
-		<>
-			<div>
-				<p>gridaly-package function</p>
-				{x}
-			</div>
-		</>
-	);
-};
+const App = () => (
+	<div>
+		<p>gridaly-package function</p>
+		<p>add: {add(4, 6)}</p>
+		<p>subtract: {subtract(20, 6)}</p>
+		<p>divide: {divide(100, 5)}</p>
+	</div>
+);
 
 export default App;
