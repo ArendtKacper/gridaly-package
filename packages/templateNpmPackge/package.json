@@ -1,0 +1,17 @@
+{
+  "name": "gridaly-package",
+  "license": "MIT",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup index.ts --format cjs,esm --dts",
+    "release": "pnpm run build && changeset publish",
+    "lint": "tsc"
+  },
+  "devDependencies": {
+    "tsup": "^6.7.0",
+    "typescript": "^5.2.2"
+  }
+}
