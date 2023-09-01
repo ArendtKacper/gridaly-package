@@ -1,27 +1,37 @@
+import { Route, Switch } from 'wouter';
 import styled, { ThemeProvider } from 'styled-components';
 
 // SHARABLE PACKAGES
 import { GlobalStyles, theme as themeDefault } from 'styled';
 
 // PACKAGES
-import { Button } from '@gridal/ui';
-import { add, divide, subtract } from '@gridal/package';
+import { routes } from 'src/routes';
 
-export const StyledDiv = styled.div`
-	background-color: ${({ theme }) => theme.success};
+// COMPONENTS
+import { Sidebar } from 'src/components/sidebar';
+
+export const StyledContainer = styled.div`
+	display: flex;
+	min-height: 100vh;
+`;
+
+export const StyledMain = styled.main`
+	flex: 1;
 `;
 
 const App = () => (
 	<ThemeProvider theme={themeDefault}>
 		<GlobalStyles />
-		<StyledDiv>
-			<p>gridaly-package function</p>
-			<p>add: {add(4, 6)}</p>
-			<p>subtract: {subtract(20, 6)}</p>
-			<p>divide: {divide(100, 5)}</p>
-		</StyledDiv>
-		{/* eslint-disable-next-line no-console */}
-		<Button text="123123" onClick={() => console.log('Click')} />
+		<StyledContainer>
+			<Sidebar />
+			<StyledMain>
+				<Switch>
+					{routes.map(({ path, component }) => (
+						<Route key={path} path={path} component={component} />
+					))}
+				</Switch>
+			</StyledMain>
+		</StyledContainer>
 	</ThemeProvider>
 );
 

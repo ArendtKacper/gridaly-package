@@ -8,7 +8,7 @@ export default defineConfig({
 
 	resolve: {
 		alias: {
-			'@sandbox': path.resolve('src/'),
+			src: path.resolve('src/'),
 		},
 	},
 
