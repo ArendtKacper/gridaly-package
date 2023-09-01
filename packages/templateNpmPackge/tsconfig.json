@@ -1,6 +1,5 @@
 {
   "extends": "tsconfig/npmTsConfig.json",
   "compilerOptions": {
-    "baseUrl": "./src"
   }
 }

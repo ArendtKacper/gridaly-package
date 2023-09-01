@@ -1,1 +1,1 @@
-export * from 'functions/mathHelpers';
+export * from './mathHelpers';
